@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download My Surprise Page</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #ffe6f2, #fff0f5);
+      text-align: center;
+      padding: 80px 20px;
+      color: #ff3366;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 18px 30px;
+      font-size: 20px;
+      color: white;
+      background: linear-gradient(45deg, #ff6699, #ff3366);
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(255, 51, 102, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(255, 51, 102, 0.7);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      color: #ff3366;
+      animation: floatUp 4s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-200px); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h2>Click below to download my surprise page 💖</h2>
+
+  <a class="download-btn" href="https://raw.githubusercontent.com/pragyanshreepatel/my-html-site/main/index.html" download="index.html">
+    ❤️ Download index.html ❤️
+  </a>
+
+  <script>
+    // Floating hearts animation
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 4000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
